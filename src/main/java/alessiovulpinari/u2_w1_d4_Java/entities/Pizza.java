@@ -21,8 +21,8 @@ public class Pizza extends MenuElement {
    @OneToMany
    private List<Topping> toppings;
 
-    public Pizza(String name, Double price, int calories) {
+    public Pizza(String name, Double price, int calories, List<Topping> toppings) {
         super(name, price, calories);
-        this.toppings = new ArrayList<>();
+        this.toppings = toppings;
     }
 }
