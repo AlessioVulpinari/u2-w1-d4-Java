@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.swing.*;
+import java.util.List;
 
 @Service
 public class MenuElementService {
@@ -32,5 +33,9 @@ public class MenuElementService {
 
     public Pizza findPizzaByName(String name) {
         return menuElementRepository.findPizzaByName(name);
+    }
+
+    public List<MenuElement> filterByCalories() {
+        return menuElementRepository.filterByCalories();
     }
 }

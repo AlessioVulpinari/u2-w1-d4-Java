@@ -8,6 +8,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
+import java.util.List;
 
 @Component
 public class MenuElementRunner implements CommandLineRunner {
@@ -30,7 +31,11 @@ public class MenuElementRunner implements CommandLineRunner {
         Menu menu = new Menu(Arrays.asList(menuElementService.findToppingByName(ham.getName()), menuElementService.findToppingByName(pineapple.getName())),
                 Arrays.asList(menuElementService.findPizzaByName(hawaiianPizza.getName())), Arrays.asList(menuElementService.findDrinkByName(water.getName())));
 
-        menuService.saveMenu(menu);
+       // menuService.saveMenu(menu);
+
+        List<MenuElement> menuElements = menuElementService.filterByCalories();
+
+        System.out.println(menuElements);
 
         /* menuElementService.saveMenuElement(ham);
         menuElementService.saveMenuElement(pineapple);
